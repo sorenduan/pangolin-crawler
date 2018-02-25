@@ -1,0 +1,4 @@
+job_key: exmpale_job_for_php_processor
+payload: "This is a simple example"
+processor_key: exmpale_for_php_processor
+payload: Hello World !

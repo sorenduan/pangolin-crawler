@@ -1,0 +1,14 @@
+# required, specify the global unique processor key
+processor_key: exmpale_for_php_processor
+
+# required, specify the excutable path
+excutable: /usr/local/bin/php
+
+# processor type, the allowed values are script(php, python, shell), groovy, or jar, default is
+type: script
+
+# specify the script file path type
+script_filepath: php-processor/simple_echo_php_processor.php
+
+# specify the script content as string, this option is unavailable when script_filepath is specified
+# script:
