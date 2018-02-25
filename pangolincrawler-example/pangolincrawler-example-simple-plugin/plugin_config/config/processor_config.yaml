@@ -1,0 +1,3 @@
+processor_key: exmpale_simple_plugin_echo_payload_processor
+type: java
+java_class: org.pangolincrawler.example.simple.plugin.EchoProcessor

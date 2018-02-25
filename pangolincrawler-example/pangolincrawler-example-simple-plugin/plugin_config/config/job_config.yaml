@@ -1,0 +1,4 @@
+job_key: exmpale_simple_plugin_job
+payload: "This is a simple example"
+# from processor_config.yaml
+processor_key: exmpale_simple_plugin_echo_payload_processor

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+https://maven.apache.org/plugins/maven-assembly-plugin/
+ -->
+<assembly>
+    <id>release</id>
+    <formats>
+        <format>dir</format>
+        <format>zip</format>
+    </formats>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>libs</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <directory>plugin_config/config</directory>
+            <outputDirectory>config/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>plugin_config/</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>plugin.yaml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

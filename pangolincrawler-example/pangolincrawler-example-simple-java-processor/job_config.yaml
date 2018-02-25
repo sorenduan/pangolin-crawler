@@ -1,0 +1,11 @@
+---
+# Required.
+job_key: exmpale_simple_java_processor_job
+# Required.
+processor_key: exmpale_simple_java_processor
+
+# Optional
+url: "http://www.yahoo.com"
+
+# Optional, You can enter any string here.
+payload: "This is a simplest job for a simplest processor."

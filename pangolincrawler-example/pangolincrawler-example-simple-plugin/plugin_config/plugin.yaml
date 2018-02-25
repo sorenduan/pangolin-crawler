@@ -1,0 +1,10 @@
+
+plugin_key: exmpale_simple_plugin
+
+job_config_files: ./config/job_config.yaml
+
+service_config_files: ./config/service_config.yaml
+
+processor_config_files: ./config/processor_config.yaml
+
+classpath: ./lib

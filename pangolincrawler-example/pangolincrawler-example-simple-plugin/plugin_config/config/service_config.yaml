@@ -1,0 +1,14 @@
+service_name: exmpale_simple_plugin_echo_service
+type: java
+java_class: org.pangolincrawler.example.simple.plugin.EchoService
+
+description: "a plugin service example"
+
+version: 1.0
+
+methods: 
+  -
+    method_name: echo
+    input_description: "any string"
+    output_description: "return the intput string with a prefix."
+    process_timeout: -1

@@ -1,0 +1,17 @@
+# required, the global unique key
+processor_key: exmpale_simple_java_processor
+
+# set the value to 'java' for java processor implementation.
+type: java
+
+# set the full java class name of the processor
+java_class: org.pangolincrawler.example.simple.java.processor.SimpleProcessor
+
+# a string or a map or array.
+context:
+  name: Tom
+  city: NK
+
+# the location where to find the processor class, that is similar to the 'classpath' in java.
+# This must use an absolute path
+java_classpath: /target/pangolincrawler-example-simple-java-processor-0.51.jar

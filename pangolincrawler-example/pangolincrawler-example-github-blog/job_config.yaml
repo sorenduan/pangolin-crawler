@@ -1,0 +1,54 @@
+# This is an example of crawling github blog post list.  
+---
+# Each job has a global unique key.
+job_key: exmpale_github_blog
+
+# Specify the processor key, and each job corresponds to a processor.
+# the processor is a program that parses the HTML content.
+# In this example, we using 'css_selector_processor' that is a built-in processor 
+# for extracting html elements using the css selector.
+processor_key: css_selector_processor
+
+# Specifgy the target url for crawling.
+url: https://github.com/blog/
+
+# The payload parameter is input value for each processor,
+# which can be a json structure or a string or number, and 
+# the yaml content will be convert into json.  
+
+# In this example, we specify the css selector in the 'playload'. 
+# You can use some tools like chrome developer tools to find 
+# the css selector of an html element.
+payload: 
+-
+  # Specify the blog post list selector and key (used for return value).
+  key: list
+  selector: '#blog-main > div.blog-content > div.posts > div.blog-post'
+  # Specify the selector for each post item.
+  children: 
+  - 
+    # Specify the selector for the post title.
+    key: title
+    selector: 'h2.blog-post-title a'
+  - 
+    # Specify the selector for the post date.
+    key: date
+    selector: 'ul.blog-post-meta > li:nth-child(1)'
+  - 
+    # Specify the selector for the author.
+    key: author
+    selector: 'ul.blog-post-meta > li.fn.meta-item'
+
+# Specify the output file where the parse result save.
+file_output:
+  dir: /tmp/pangolin_exmaple_github_blog
+
+# Specify the request rate limition used to avoid request overload.
+request_rate:
+  # Send one http request every ten seconds
+  expression: 1/5s
+
+# Parse the next page
+loop:
+  # A regular expression used to define the link for the next page
+  links_pattern: ^http(s?)://github\.com/blog\?after=.+

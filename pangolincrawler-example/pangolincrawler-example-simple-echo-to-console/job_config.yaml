@@ -1,0 +1,4 @@
+---
+job_key: exmpale_just_echo_a_string
+processor_key: just_echo_processor
+payload: "This is a simplest example."

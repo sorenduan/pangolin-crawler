@@ -1,0 +1,10 @@
+---
+job_key: exmpale_simple_cron_job
+processor_key: just_echo_processor
+
+# http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/crontrigger.html
+# every 2 seconds
+cron: "*/2 * * * * ?"
+
+# You can enter any string here.
+payload: "This is a simplest cond job."
