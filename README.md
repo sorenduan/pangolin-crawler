@@ -2,7 +2,11 @@
 
 ## Overview
 
+TODO
+
 ## Features
+
+TODO
 
 * distributed environment supported.
 * multiple language supported.
@@ -10,7 +14,7 @@
 
 ## Architecture
 
-four parts
+TODO
 
 * Job:
 * Processor:
