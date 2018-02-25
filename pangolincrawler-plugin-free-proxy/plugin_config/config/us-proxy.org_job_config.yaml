@@ -1,0 +1,35 @@
+---
+job_key: pangolin_plugin_free_proxy_job_us-proxy.org
+
+# cron: "0 0 0 0 0"
+
+description: "Get free proxies from some proxy www.us-proxy.org."
+
+processor_key: css_selector_processor
+
+url: https://www.us-proxy.org/
+
+request_rate: 
+  expression: 1/5s
+payload: 
+  -
+    selector: "#proxylisttable > tbody > tr"
+    key: list 
+    children: 
+      - 
+        key: host
+        selector: "td:nth-child(1)"
+      - 
+        key: port
+        selector: "td:nth-child(2)"
+      - 
+        key: country
+        selector: "td:nth-child(3)"
+      - 
+        key: anonymity
+        selector: "td:nth-child(5)"        
+      - 
+        key: type
+        selector: "td:nth-child(7)"
+
+next_job_key: pangolin_plugin_free_proxy_job_save_proxy

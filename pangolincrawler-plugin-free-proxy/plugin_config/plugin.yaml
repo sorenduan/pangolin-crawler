@@ -1,0 +1,14 @@
+
+plugin_key: free_proxy_plugin
+
+job_config_files: 
+  - ./config/save_proxy_job_config.yaml
+  - ./config/us-proxy.org_job_config.yaml
+  - ./config/proxy_checker_job_config.yaml
+  - ./config/pubproxy.com_job_config.yaml
+
+service_config_files: ./config/service_config.yaml
+
+processor_config_files: ./config/processor_config.yaml
+
+classpath: ./lib

@@ -1,0 +1,13 @@
+---
+job_key: pangolin_plugin_free_proxy_job_proxy_availability_checker
+
+# cron: "0 0 0 0 0"
+
+# optional, specify job description.
+description: "get free proxy from some proxy websites."
+
+processor_config: 
+  type: java
+  java_class: org.pangolincrawler.plugin.freeproxy.processor.ProxyVailabilityCheckerProcessor
+  context:
+    url_for_check: http://www.google.com

@@ -1,0 +1,10 @@
+---
+job_key: pangolin_plugin_free_proxy_job_save_proxy
+
+# cron: "0 0 0 0 0"
+
+# optional, specify job description.
+description: "get free proxy from some proxy websites."
+
+# use the system processor 'css_selector_processor'.
+processor_key: pangolin_plugin_free_proxy_job_processor

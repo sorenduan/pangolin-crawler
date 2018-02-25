@@ -1,0 +1,15 @@
+service_name: free_proxy_plugin_service
+type: java
+java_class: org.pangolincrawler.plugin.freeproxy.service.FreeProxyService
+
+description: ""
+
+version: 1.0
+
+methods: 
+  -
+    method_name: init_proxy_table
+    description: "call-service  -s free_proxy_plugin_service -m init_proxy_table"
+    input_description: "null"
+    output_description: "null"
+    process_timeout: 10000

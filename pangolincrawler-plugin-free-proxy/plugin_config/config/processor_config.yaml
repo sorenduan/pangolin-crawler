@@ -1,0 +1,3 @@
+processor_key: pangolin_plugin_free_proxy_job_processor
+type: java
+java_class: org.pangolincrawler.plugin.freeproxy.processor.UsProxyParserProcessor

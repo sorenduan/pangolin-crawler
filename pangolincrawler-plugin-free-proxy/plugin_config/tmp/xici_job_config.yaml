@@ -1,0 +1,51 @@
+---
+job_key: pangolin_plugin_free_proxy_job_xicidaili.com
+
+# cron: "0 0 0 0 0"
+
+# optional, specify job description.
+description: "get free proxy from some proxy websites."
+
+# use the system processor 'css_selector_processor'.
+processor_key: css_selector_processor
+
+urls : 
+  - "http://www.xicidaili.com/nn/1"
+  - "http://www.xicidaili.com/nn/2"
+  - "http://www.xicidaili.com/nn/3"
+  - "http://www.xicidaili.com/nn/4"
+
+  - "http://www.xicidaili.com/nt/1"
+  - "http://www.xicidaili.com/nt/2"
+  - "http://www.xicidaili.com/nt/3"
+  - "http://www.xicidaili.com/nt/4"
+
+  - "http://www.xicidaili.com/wn/1"
+  - "http://www.xicidaili.com/wn/2"
+  - "http://www.xicidaili.com/wn/3"
+  - "http://www.xicidaili.com/wn/4"
+
+  - "http://www.xicidaili.com/wt/1"
+  - "http://www.xicidaili.com/wt/2"
+  - "http://www.xicidaili.com/wt/3"
+  - "http://www.xicidaili.com/wt/4"
+
+
+request_rate: 
+  expression: 1/5s
+payload: 
+  -
+    selector: "#ip_list > tbody > tr"
+    key: list 
+    children: 
+      - 
+        key: host
+        selector: "td:nth-child(2)"
+      - 
+        key: port
+        selector: "td:nth-child(3)"
+      - 
+        key: type
+        selector: "td:nth-child(6)"
+
+next_job_key: pangolin_plugin_free_proxy_job_save_proxy

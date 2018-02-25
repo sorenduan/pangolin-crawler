@@ -1,0 +1,8 @@
+job_key: pangolin_plugin_free_proxy_job_pubproxy.com
+description: Get free proxies from some proxy pubproxy.com.
+processor_config: 
+  type: java
+  java_class: org.pangolincrawler.plugin.freeproxy.processor.PubproxyParserProcessor 
+url: "http://pubproxy.com/api/proxy?format=json&limit=20"
+request_rate:
+  expression: 1/5s
