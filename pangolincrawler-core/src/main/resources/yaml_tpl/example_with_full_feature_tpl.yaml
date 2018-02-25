@@ -1,0 +1,61 @@
+# http://www.yamllint.com/
+# http://www.yaml.org/spec/1.2/spec.html
+# https://www.json2yaml.com/
+# https://codebeautify.org/yaml-to-json-xml-csv
+
+#version : 1
+#job_key : test
+#processor_key: css_processor
+#url : https://github.com/blog
+#cron: 0 0 0 0 0 
+#payload : 
+# - 
+#  list : 
+#   selector : "#blog-main > div.blog-content > div.posts > blog-post"
+#   children:
+#    - 
+#     title: 
+#      selector: "h2 > a"
+#    - 
+#      date: "ul > li:nth-child(1)"
+#    - 
+#      author:
+#      selector: ul > li.fn.meta-item > a
+#callback_url: http://127.0.0.1:8080/a.php
+#  
+
+---
+cron: "0 0 0 0 0"
+description: "a tpl example."
+job_key: test
+
+options:
+  url: "https://github.com/blog"
+payload:
+  -
+    children: 
+      - 
+        key: title
+        selector: "#blog-main > div.blog-content > div.posts > blog-post"
+      - 
+        key: date
+        selector: "h2 > a"
+      - 
+        key: author
+        selector: "ul > li.fn.meta-item > a"
+    key: list
+    selector: "#blog-main > div.blog-content > div.posts > div.blog-post"
+processor_key: css_selector_processor
+callback_url: http://1111
+
+---
+job_key: exmpale_simple_job_for_rate
+payload: "This is a simple example"
+processor_key: simple_processor
+url : https://seofangfa.com/
+request_rate: 1/s, 100/2s
+rate_plolicy: hosts/url/perId
+proxy_host: 123sdfasdf:8080
+proxy_service_key : abc
+url_cache_interval: 10s 
+processor_output_filepath: /tmp/ttt.txt

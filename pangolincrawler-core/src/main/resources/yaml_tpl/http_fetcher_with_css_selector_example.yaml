@@ -1,0 +1,28 @@
+# http://www.yamllint.com/
+# http://www.yaml.org/spec/1.2/spec.html
+# https://www.json2yaml.com/
+# https://codebeautify.org/yaml-to-json-xml-csv
+
+#version : 1
+job_key : test
+description : a tpl example.
+processor_key: css_processor
+url : https://github.com/blog
+cron: 0 0 0 0 0 
+options:
+  url : https://github.com/blog
+payload : 
+ - 
+  list : 
+   selector : "#blog-main > div.blog-content > div.posts > blog-post"
+   children:
+    - 
+     title: 
+      selector: "h2 > a"
+    - 
+      date: "ul > li:nth-child(1)"
+    - 
+      author:
+      selector: ul > li.fn.meta-item > a
+callback_url: http://127.0.0.1:8080/a.php
+  

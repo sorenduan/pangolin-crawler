@@ -1,0 +1,27 @@
+
+# required, specify the global unique processor key
+processor_key: exmpale_for_test_output_file
+
+# required, specify the excutable path
+excutable: /usr/local/bin/php
+
+# processor type, the allowed values are script(php, python, shell), groovy, or jar, default is
+type: script
+
+# specify the script file path type
+script_filepath: /yourpath/test.php
+
+# specify the script content as string, this option is unavailable when script_filepath is specified
+# script:
+
+# specify the processor implication when type is java
+# eg. impl: 
+# impl: 
+
+# specify the java classpath for class loader when type is java
+# eg. classpath: 
+# classpath: 
+
+
+context:
+  

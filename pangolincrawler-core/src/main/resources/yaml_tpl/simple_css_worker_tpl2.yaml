@@ -1,0 +1,20 @@
+# http://www.yamllint.com/
+# http://www.yaml.org/spec/1.2/spec.html
+# https://www.json2yaml.com/
+# https://codebeautify.org/yaml-to-json-xml-csv
+
+#version : 1
+job_key : test
+payload : 
+ - 
+  list : 
+   selector : "#blog-main > div.blog-content > div.posts > blog-post"
+   children:
+    - 
+     title: 
+      selector: "h2 > a"
+    - 
+      date: "ul > li:nth-child(1)"
+    - 
+      author:
+      selector: ul > li.fn.meta-item > a

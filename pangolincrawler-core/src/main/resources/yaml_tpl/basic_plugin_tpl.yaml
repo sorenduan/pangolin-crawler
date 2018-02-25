@@ -1,0 +1,13 @@
+# The plug-in configuration file must be named as 'plugin.yaml'
+
+# required, specify the global unique plugin key
+plugin_key: exmpale_for_basic_plugin
+
+# optional, specify the job config file path , which can be a string or an array, and use a relative path. 
+job_config_files: 
+
+service_config_files: 
+
+processor_config_files: 
+
+classpath: 

@@ -1,0 +1,65 @@
+# this is an example job config template using the system css selector processor.
+---
+# required, specify the global unique job key
+job_key: test
+
+# optional, specify cron expression.
+# if this option is not specified , you must trigger job trigger
+cron: "0 0 0 0 0"
+
+# optional, specify job description.
+description: "a tpl example."
+
+# required, specify prcessor key, one job must have one processor.
+# you can view all avaliable processors with the command 'processor-list' of pangolin command line console tools.
+processor_key: css_selector_processor
+
+# optional, specify target url for crawling.
+# this option also can be specifed as an array with the 'urls' key, 
+# and the pages of these url must be the same html structure,
+# and each url corresponds to a task.
+# urls : 
+#  - "https://exmpale.com/page1"
+#  - "https://exmpale.com/page2"
+#  - "https://exmpale.com/page3"  
+url: "https://exmpale.com/page1"
+
+# optional, control http request frequency.
+# avoid overload target web server.
+request_rate: 
+  # Required, specify rate expression.
+  # The value "1/10s" means that only one request can be sent every 10 seconds per host.
+  # The suffix 's' means seconds, 'm' means minutes, 'h' means hour and 'd' means days.
+  # This option can contain a number of values separated by comma, 
+  # for example "expression: 1/10s,10/m,100/h,100/d"
+  expression: 1/10s
+  
+  # Optional, specify the request frequency policy, default is 'host'
+  # that means the expression is for each host.
+  # policy: host
+
+# required, this is the input value for the css selector processor
+# this option used to specify which part of the html page is extracted, 
+# this option will be parsed as as json structure.
+payload:
+  -
+    # specify the css selector string used to extract data 
+    # the first layer usually used to parse list DOM.
+    selector: "#blog-main > div.blog-content > div.posts > div.blog-post"
+    # specify the key for return value of this parts.
+    key: list 
+    # specify children selector parts, this is parsed as a json array.
+    children: 
+      - 
+        # specify the key for return value of this parts.
+        key: title
+        # specify the css selector relative to the parent selector. 
+        selector: "div.posts > blog-post"
+      - 
+        key: date
+        selector: "h2 > a"
+      - 
+        key: author
+        selector: "ul > li.fn.meta-item > a"
+
+

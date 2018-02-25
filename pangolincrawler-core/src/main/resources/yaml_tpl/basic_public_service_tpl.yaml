@@ -1,0 +1,31 @@
+
+# required, specify the global unique processor key
+service_name: exmpale_for_a_public_service
+
+# optional, specify the global unique processor key
+description: exmpale_for_a_public_service
+
+methods: 
+  -
+    method_name: 
+    input_description:
+    output_description:
+    # optional, if it is not specified, it will never timout.
+    process_timeout: 
+
+# processor type, the allowed values are script(php, python, shell), groovy, or jar, default is
+type: script
+
+# specify the script file path type
+script_filepath: /yourpath/test.php
+
+# specify the script content as string, this option is unavailable when script_filepath is specified
+# script:
+
+# specify the processor implication when type is java
+# eg. java_class: 
+# java_class: 
+
+# specify the java classpath for class loader when type is java
+# eg. java_classpath: 
+# java_classpath: 

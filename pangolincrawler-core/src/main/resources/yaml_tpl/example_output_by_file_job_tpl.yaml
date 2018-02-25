@@ -1,0 +1,35 @@
+#job_key: exmpale_simple_job_for_rate
+#processor_key: simple_processor
+#url: https://seofangfa.com/
+#payload:
+#- children:
+#  - key: title
+#    selector: '#blog-main > div.blog-content > div.posts > blog-post'
+#  - key: date
+#    selector: h2 > a
+#  - key: author
+#    selector: ul > li.fn.meta-item > a
+#  key: list
+#  selector: '#blog-main > div.blog-content > div.posts > div.blog-post'
+#file_output:
+#  dir: null
+#  generate_index_file: true
+#  file_suffix: .json
+#  filename: abc
+#callback_url: http://sdfsdfsf/asdfasdfas
+job_key: exmpale_for_test_output_file
+processor_key: css_selector_processor
+url: https://github.com/blog/
+payload: 
+  - 
+    children: 
+      - 
+        key: title
+        selector: "h2.blog-post-title a"
+    key: list
+    selector: "#blog-main > div.blog-content > div.posts > div.blog-post"
+file_output:
+  dir: /tmp/pangolin
+  generate_index_file: true
+  suffix: .json
+  filename: abc
