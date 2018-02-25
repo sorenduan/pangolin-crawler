@@ -1,0 +1,13 @@
+*.idea
+*.iml
+target/
+var/
+*.classpath
+*.project
+*.settings
+*.log
+*.meta
+*.db
+*.data
+*.lst
+
